@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.maxzdosreis</groupId>
-	<artifactId>taskauthhub</artifactId>
+	<artifactId>bookauthorapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>taskauthhub</name>
-	<description>API REST para gerenciamento de usuários e tarefas com autenticação JWT e redefinição de senha via email.</description>
+	<name>bookauthorapi</name>
+	<description>Sistema de gerenciamento de autores e suas obras literárias via API REST.</description>
 	<url/>
 	<licenses>
 		<license/>

@@ -1,4 +1,4 @@
-package org.maxzdosreis.taskauthhub;
+package org.maxzdosreis.bookauthorapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
