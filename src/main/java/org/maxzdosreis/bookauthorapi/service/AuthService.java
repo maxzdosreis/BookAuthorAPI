@@ -35,6 +35,9 @@ public class AuthService {
     @Autowired
     private UserRepository repository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     public ResponseEntity<TokenDTO> signIn(AccountCredentialsDTO credentials) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -90,7 +93,8 @@ public class AuthService {
         var entity = new User();
         entity.setFullName(user.getFullname());
         entity.setUserName(user.getUsername());
-        entity.setPassword(generateHashedPassword(user.getPassword()));
+        entity.setEmail(user.getEmail());
+        entity.setPassword(passwordEncoder.encode(user.getPassword()));
         entity.setAccountNonExpired(true);
         entity.setAccountNonLocked(true);
         entity.setCredentialsNonExpired(true);
@@ -98,6 +102,6 @@ public class AuthService {
 
         var dto = repository.save(entity);
 
-        return new AccountCredentialsDTO(dto.getUsername(), dto.getPassword(), dto.getFullName());
+        return new AccountCredentialsDTO(dto.getUsername(), dto.getPassword(), dto.getFullName(), dto.getEmail());
     }
 }
