@@ -120,7 +120,7 @@ public class PasswordResetService {
         message.setTo(email);
         message.setSubject("Reset de Senha - BookAuthor API");
 
-        String resetLink = baseUrl + "/auth/api/v1/reset-password?token=" + token;
+        String resetLink = baseUrl + "/auth/reset-password?token=" + token;
 
         String emailBody = "Olá" + (fullName != null ? " " + fullName : "") + "!\n\n" +
                 "Você solicitou a redefinição da sua senha na BookAuthor API.\n\n" +
