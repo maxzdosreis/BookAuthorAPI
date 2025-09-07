@@ -1,5 +1,10 @@
 cors:
   originPatterns: http://localhost:8080,http://localhost:3000,https://www.erudio.com.br
+app:
+  password-reset:
+    token-expiry-hours: 1
+    base-url: http://localhost:8080
+    max-attempts-per-hour: 3
 security:
   jwt:
     token:
@@ -20,9 +25,28 @@ spring:
       hibernate:
     show-sql: false
     open-in-view: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enabled: true
+      mail.smtp.starttls.required: true
+  task:
+    execution:
+      pool:
+        core-size: 2
+        max-size: 5
+        queue-capacity: 100
+      thread-name-prefix: async-task-
+    scheduling:
+      pool:
+        size: 2
 logging:
   level:
-    br.com.maxzdosreis: DEBUG
+    br.com.maxzdosreis: TRACE
 spring-doc:
   paths-to-match:
     - /auth/**
