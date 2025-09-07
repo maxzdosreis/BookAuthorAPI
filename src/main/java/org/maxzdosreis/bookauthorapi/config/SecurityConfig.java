@@ -64,6 +64,8 @@ public class SecurityConfig {
                         authorizeHttpRequests -> authorizeHttpRequests
                                 .requestMatchers(
                                         "/auth/signin",
+                                        "/auth/forgot-password",
+                                        "/auth/reset-password",
                                         "/auth/refresh/**",
                                         "/auth/createUser", // desabilitar isso em produção
                                         "/swagger-ui/**",
