@@ -16,4 +16,5 @@ public class AccountCredentialsDTO implements Serializable {
     private String username;
     private String password;
     private String fullname;
+    private String email;
 }

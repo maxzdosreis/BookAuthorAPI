@@ -29,6 +29,9 @@ public class User implements UserDetails, Serializable {
     @Column(name = "full_name")
     private String fullName;
 
+    @Column(name = "email", unique = true)
+    private String email;
+
     @Column
     private String password;
 
